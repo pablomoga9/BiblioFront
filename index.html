@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="./assets/images/libLogo.png" id="logo" alt="logo">
+        <a href="/">Bibliotech</a>
+    </header>
+    <div class="container">
+       
+        <div id="searchWrapper">
+            <input type="text" name="searchBar" id="searchBar"
+            placeholder="Busca una lista de libros">
+           <label for="">Frecuencua de actualización</label>
+            <select name="updated" id="selectUpdate">
+                <option value="ALL">Todos</option>
+                <option value="WEEKLY">Semanalmente</option>
+                <option value="MONTHLY">Mensualmente</option>
+            </select>
+        </div>
+        <ul id="categoryList"></ul>
+    </div>
+<script src="./app.js"></script>
+</body>
+</html>
