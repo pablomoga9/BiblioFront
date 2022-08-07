@@ -10,19 +10,23 @@
 <body>
     <header>
         <img src="./assets/images/libLogo.png" id="logo" alt="logo">
-        <a href="/">Bibliotech</a>
+        <a href="/" id="logoText">Bibliotech</a>
     </header>
     <div class="container">
        
         <div id="searchWrapper">
-            <input type="text" name="searchBar" id="searchBar"
-            placeholder="Busca una lista de libros">
-           <label for="">Frecuencua de actualización</label>
+            <div class="search-box">
+                <input type="text" name="searchBar" id="searchBar"
+                placeholder="Busca una lista de libros">
+            </div>
+            <div class="search-select">
+                <label for="">Frecuencia de actualización</label>
             <select name="updated" id="selectUpdate">
                 <option value="ALL">Todos</option>
                 <option value="WEEKLY">Semanalmente</option>
                 <option value="MONTHLY">Mensualmente</option>
             </select>
+            </div>
         </div>
         <ul id="categoryList"></ul>
     </div>

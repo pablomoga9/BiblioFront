@@ -18,6 +18,14 @@ header{
 }
 
 a{
+    cursor: pointer;
+}
+ul{
+    position: absolute;
+    top: 50%;
+}
+
+#logoText{
     text-decoration: none;
     font-weight: bold;
     font-size: 40px;
@@ -41,9 +49,11 @@ a{
     flex-direction: row;
 }
 
-/* #searchWrapper::after{
-    content: '🔎';
-    position: absolute;
-    top: 2px;
-    right: 15px;
-} */
+.search-box{
+    position:absolute;
+    right: 50%;
+}
+.search-select{
+    position:absolute;
+
+}
