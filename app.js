@@ -50,8 +50,10 @@ const loadCharacters = async()=>{
 };
 
 async function loadBooks (bookList){
-   console.log(bookList)
-    const res = await fetch('https://api.nytimes.com/svc/books/v3/lists/bookList.json?api-key=RfMnGRAEn2a8ieRUrcEKuqoMckyRLqQf')
+   const res = await fetch(`https://api.nytimes.com/svc/books/v3/lists/${bookList}.json?api-key=RfMnGRAEn2a8ieRUrcEKuqoMckyRLqQf`)
+    const data = await res.json();
+    
+    displayBooks(data);
 }
 // console.log("ok")
 const displayLists = (list)=>{
@@ -59,7 +61,7 @@ const displayLists = (list)=>{
     const htmlString = list.map((lists1)=>{
        return  `
         <li class = "book">
-            <button onclick="loadBooks(lists1.display_name)">${lists1.display_name}</button>
+            <a onclick="loadBooks('${lists1.list_name}')">${lists1.list_name}</a>
             <p>${lists1.oldest_published_date}</p><br>
             <p>${lists1.newest_published_date}</p><br>
             <p>${lists1.updated}</p>
@@ -73,16 +75,18 @@ const displayLists = (list)=>{
 
 const displayBooks = (books1)=>{
     booksList.innerHTML = "";
-    const htmlString = books1.map((book1,i)=>{
-        return `<li class = "book">
-        <h2>${book1.results.books[i].rank}#${book1.results.books[i].title}</h2>
-        <img src="${book1.results.books[i].book_image}">
-        <p>Semanas en lista: ${book1.results.books[i].weeks_on_list}</p>
-        <a href="${book1.results.books[i].buy_links[0].url}">Comprar</a>
+    const htmlString = books1.results.books.map((book1)=>{
+        return `
+        <li class = "book">
+        <h2>${book1.rank}#${book1.title}</h2>
+        <img src="${book1.book_image}">
+        <p>Semanas en lista: ${book1.weeks_on_list}</p>
+        <a href="${book1.buy_links[0].url}">Comprar</a>
     </li>`
     })
     .join('')
-    booksList.innerHTML = htmlString;
+    booksList.innerHTML = `<a href
+    ="/" id="goBack">Volver</a><h1>${books1.results.list_name}</h1>${htmlString}`;
 }
 
 

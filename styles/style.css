@@ -57,3 +57,42 @@ ul{
     position:absolute;
 
 }
+
+#goBack{
+   text-decoration: none;
+    background: none;
+    border-radius: 200px;
+   border: 2px solid rgb(35, 143, 157);
+   text-transform: uppercase;
+   padding: 12px 20px;
+   min-width: 200px;
+   margin:10px;
+   transition: color 0.4s linear;
+   position: relative;
+   color:black
+}
+
+
+#goBack:hover{
+    color: #fff;
+}
+
+#goBack::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(115, 225, 223);
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+    transform: scaleX(0);
+    border-radius: 200px;
+}
+#goBack:hover::before{
+    transform: scaleX(1);
+    border-radius: 200px;
+}
