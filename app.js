@@ -103,9 +103,12 @@ const displayBooks = (books1)=>{
     const htmlString = books1.map((book1)=>{
         return `
         <li class = "book">
+        <img class="bookImage" src="${book1.book_image}">
         <h2>${book1.rank}#${book1.title}</h2>
-        <img src="${book1.book_image}">
-        <p>Semanas en lista: ${book1.weeks_on_list}</p>
+        <div class="imageOverlay">
+        <p class="imageDescription">${book1.description}</p>
+        <p class="imageLong">Semanas en lista: ${book1.weeks_on_list}</p>
+        </div>
         <a href="${book1.buy_links[0].url}" class="buyBtn">Comprar</a>
     </li>`
     })
