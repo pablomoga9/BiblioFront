@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+   
     <title>Document</title>
 </head>
 <body>
-    <header>
+   <header>
         <img src="./assets/images/libLogo.png" id="logo" alt="logo">
         <a href="/" id="logoText">Bibliotech</a>
     </header>
@@ -16,11 +18,10 @@
        
         <div id="searchWrapper">
             <div class="search-box">
-                <input type="text" name="searchBar" id="searchBar"
-                placeholder="Busca una lista de libros">
+                <input type="text" name="searchBar" id="searchBar">
             </div>
             <div class="search-select">
-                <label for="">Frecuencia de actualización</label>
+                <label id="updateText" for="">Frecuencia de actualización</label>
             <select name="updated" id="selectUpdate">
                 <option value="ALL">Todos</option>
                 <option value="WEEKLY">Semanalmente</option>
@@ -30,6 +31,7 @@
         </div>
         <ul id="categoryList"></ul>
     </div>
+   
 <script src="./app.js"></script>
 </body>
 </html>

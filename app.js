@@ -1,20 +1,34 @@
 const booksList = document.getElementById('categoryList');
-let actualBook;
+
 const searchBar = document.getElementById('searchBar');
 const updateSelect = document.getElementById('selectUpdate');
-
+const updateText = document.getElementById('updateText');
+let bookBool;
+let bookData;
 let sendData; 
+let initialBookData;
+
+//Detectar cuando se escribe en el input de búsqueda de listas y libros
 searchBar.addEventListener('keyup',(event)=>{
     
     const searchString = event.target.value.toLowerCase()
     const filteredLists = sendData.filter(lists1=>{
-       
-        return (lists1.display_name.toLowerCase().includes(searchString)||lists1.updated.toLowerCase().includes(searchString));
-    });
+       return (lists1.display_name.toLowerCase().includes(searchString)||lists1.updated.toLowerCase().includes(searchString));
+      });
     
-    displayLists(filteredLists)
+    if(!bookBool){//Ejecutar filtro de listas
+        displayLists(filteredLists)
+    }
+    else{//Ejecutar filtro de libros
+       console.log(bookBool)
+        const filteredBooks = bookData.filter(books1=>{
+            return(books1.title.toLowerCase().includes(searchString))
+        })
+        displayBooks(filteredBooks)
+    }
+     
+   
 })
-
 updateSelect.addEventListener('click',(event)=>{
     event.preventDefault();
     const optionValue = event.target.value;
@@ -33,10 +47,17 @@ updateSelect.addEventListener('click',(event)=>{
    
 })
 
-const loadCharacters = async()=>{
+
+
+
+
+const loadLists = async()=>{
     try{
         const res = await fetch('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=RfMnGRAEn2a8ieRUrcEKuqoMckyRLqQf')
-       
+        bookBool = false;
+        searchBar.placeholder = "Busca una lista de libros";
+        updateSelect.style.display = "block";
+        updateText.style.display = "block";
         const data = await res.json();
         
         sendData = data.results;
@@ -51,9 +72,13 @@ const loadCharacters = async()=>{
 
 async function loadBooks (bookList){
    const res = await fetch(`https://api.nytimes.com/svc/books/v3/lists/${bookList}.json?api-key=RfMnGRAEn2a8ieRUrcEKuqoMckyRLqQf`)
-    const data = await res.json();
-    
-    displayBooks(data);
+    initialBookData = await res.json();
+    bookBool = true;
+    searchBar.placeholder = "Busca un libro"
+    updateSelect.style.display = "none";
+    updateText.style.display = "none";
+    bookData = initialBookData.results.books;
+    displayBooks(bookData);
 }
 // console.log("ok")
 const displayLists = (list)=>{
@@ -75,23 +100,28 @@ const displayLists = (list)=>{
 
 const displayBooks = (books1)=>{
     booksList.innerHTML = "";
-    const htmlString = books1.results.books.map((book1)=>{
+    const htmlString = books1.map((book1)=>{
         return `
         <li class = "book">
         <h2>${book1.rank}#${book1.title}</h2>
         <img src="${book1.book_image}">
         <p>Semanas en lista: ${book1.weeks_on_list}</p>
-        <a href="${book1.buy_links[0].url}">Comprar</a>
+        <a href="${book1.buy_links[0].url}" class="buyBtn">Comprar</a>
     </li>`
     })
     .join('')
     booksList.innerHTML = `<a href
-    ="/" id="goBack">Volver</a><h1>${books1.results.list_name}</h1>${htmlString}`;
+    ="/" id="goBack">Volver</a><h1>${initialBookData.results.list_name}</h1>${htmlString}`;
 }
 
 
-console.log(actualBook)
-loadCharacters();
+
+loadLists();
+
+    
+   
+    
+
 // document.getElementById("listaName").addEventListener('click', event =>{
 //     let listaEvent = event.innerHTML;
 
