@@ -17,10 +17,11 @@ searchBar.addEventListener('keyup',(event)=>{
       });
     
     if(!bookBool){//Ejecutar filtro de listas
+       
         displayLists(filteredLists)
     }
     else{//Ejecutar filtro de libros
-       console.log(bookBool)
+       
         const filteredBooks = bookData.filter(books1=>{
             return(books1.title.toLowerCase().includes(searchString))
         })
