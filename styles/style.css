@@ -51,9 +51,7 @@ body{
     margin-right: 10px;
 }
 
-.buyBtn{
-    
-}
+
 
 #logo{
     /* position: absolute; */
@@ -61,6 +59,38 @@ body{
     height: 20%;
     opacity: 70%;    
 }
+
+#navTab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 10px;
+    list-style-type: none;
+    right: 0px;
+}
+#navTab > li{
+    margin: 20px;
+}
+#btnLogin, #btnSignup{
+    padding: 8px;
+    border-radius: 20px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: 3px solid rgb(35, 143, 157);
+}
+
+#modal::backdrop{
+    background-color: rgba(0, 0, 0, 0.6);
+    
+
+}
+#modal{
+    border-radius: 40px;
+    padding: 30px;
+    border: 5px solid rgb(192, 192, 192) ;
+}
+
 
 ::-webkit-scrollbar{
     width: 12px;
@@ -85,6 +115,23 @@ header{
     justify-content: center;
 }
 
+#selectUpdate{
+    border-radius: 20px;
+    background: none;
+    color: white;
+    border: 2px solid rgb(23, 84, 120);
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+}
+option{
+    background: black;
+}
+
 ul{
     position: absolute;
     top: 50%;
@@ -99,13 +146,14 @@ ul{
     color: rgb(12, 7, 0);
 }
 
-#searchBar{
+#searchBar, #emailInput, #passInput{
     width: 100%;
-    height: 50px;
+    height: 30px;
     border-radius: 3px;
-    border: 1px solid #eaeaea;
+    border: 2px solid #eaeaea;
     padding: 5px 10px;
     font-size: 12px;
+    margin: 20px 0px 20px 0px;
 }
 
 #searchWrapper{
@@ -117,10 +165,21 @@ ul{
 .search-box{
     position:absolute;
     right: 50%;
+    
 }
 .search-select{
     position:absolute;
-
+    cursor: pointer;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    right:0px;
+    top: 50px;
+}
+#updateText{
+    position: relative;
+    top: -40px;
 }
 
 a{

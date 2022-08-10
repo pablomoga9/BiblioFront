@@ -8,6 +8,19 @@ let bookData;
 let sendData; 
 let initialBookData;
 
+
+//Abrir ventana popup de inicio de sesión y registro
+const openModalLogIn = document.querySelector('#btnLogin');
+const closeModalLogIn = document.querySelector('#btnCloseLogin');
+const modal = document.querySelector('#modal');
+
+openModalLogIn.addEventListener("click",()=>{
+    modal.showModal();
+})
+closeModalLogIn.addEventListener("click",()=>{
+    modal.close();
+})
+
 //Detectar cuando se escribe en el input de búsqueda de listas y libros
 searchBar.addEventListener('keyup',(event)=>{
     
@@ -33,8 +46,7 @@ searchBar.addEventListener('keyup',(event)=>{
 updateSelect.addEventListener('click',(event)=>{
     event.preventDefault();
     const optionValue = event.target.value;
-    console.log(optionValue)
-    if(optionValue == "ALL"){
+   if(optionValue == "ALL"){
         displayLists(sendData)
     }
     else{

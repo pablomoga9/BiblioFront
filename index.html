@@ -10,10 +10,19 @@
     <title>Document</title>
 </head>
 <body>
-   <header>
+    <nav class="menu">
+        <ul id="navTab">
+            <li><button id="btnLogin">Iniciar Sesión</button></li>
+            <li><button id="btnSignup">Registro</button></li>
+            
+        </ul>
+    </nav>
+    <header>
+      
         <img src="./assets/images/libLogo.png" id="logo" alt="logo">
         <a href="/" id="logoText">Bibliotech</a>
     </header>
+   <main>
     <div class="container">
        
         <div id="searchWrapper">
@@ -31,7 +40,19 @@
         </div>
         <ul id="categoryList"></ul>
     </div>
-   
+    <dialog id="modal">
+        <h2>Inicio de sesión</h2>
+        <form method="dialog">
+            <button id="btnCloseLogin">X</button>
+            <label>Email<input id="emailInput" type="text" placeholder="Introduce tu correo electrónico"></label><br>
+            <label>Contraseña <input id="passInput" type="text" placeholder="Introduce tu contraseña"></label>
+            <button type="submit">Enviar</button>
+        </form>
+    </dialog>
+   </main>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
 <script src="./app.js"></script>
 <script src="./user.js"></script>
 </body>
