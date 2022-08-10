@@ -42,18 +42,30 @@
     </div>
     <dialog id="modal">
         <h2>Inicio de sesión</h2>
-        <form method="dialog">
+        <form method="dialog"  id="form1">
             <button id="btnCloseLogin">X</button>
-            <label>Email<input id="emailInput" type="text" placeholder="Introduce tu correo electrónico"></label><br>
-            <label>Contraseña <input id="passInput" type="text" placeholder="Introduce tu contraseña"></label>
+            <label>Email<input id="emailInput" type="text" name="email" placeholder="Introduce tu correo electrónico"></label><br>
+            <label>Contraseña <input id="passInput" type="password" name="pass" placeholder="Introduce tu contraseña"></label>
+            <button type="submit">Enviar</button>
+        </form>
+    </dialog>
+    <dialog id="modal2">
+        <h2>Registro</h2>
+        <form method="dialog"  id="form2">
+            <button id="btnCloseSignUp">X</button>
+            <label>Email <input id="email2" name="email2" type="text" placeholder="Introduce un correo electrónico"></label><br>
+            <label>Contraseña <input id="pass1" type="password" name="pass1" placeholder="Introduce una contraseña"></label>
+            <label>Repite la contraseña <input id="pass2" type="password" name="pass2" placeholder="Vuelve a introducir la misma contraseña"></label>
             <button type="submit">Enviar</button>
         </form>
     </dialog>
    </main>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
 <script src="./app.js"></script>
-<script src="./user.js"></script>
+<script src="./scripts/firestore.js"></script>
+<script src="./scripts/user.js"></script>
 </body>
 </html>

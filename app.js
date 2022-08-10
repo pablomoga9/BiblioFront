@@ -21,6 +21,17 @@ closeModalLogIn.addEventListener("click",()=>{
     modal.close();
 })
 
+const openModalSignUp = document.querySelector('#btnSignup');
+const closeModalSignUp = document.querySelector('#btnCloseSignUp')
+const modal2 = document.querySelector('#modal2');
+
+openModalSignUp.addEventListener("click",()=>{
+    modal2.showModal();
+})
+closeModalSignUp.addEventListener("click",()=>{
+    modal2.close();
+})
+
 //Detectar cuando se escribe en el input de búsqueda de listas y libros
 searchBar.addEventListener('keyup',(event)=>{
     
