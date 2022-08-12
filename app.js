@@ -134,8 +134,9 @@ const displayBooks = (books1)=>{
         <p class="imageLong">Semanas en lista: ${book1.weeks_on_list}</p>
         </div>
         <a href="${book1.buy_links[0].url}" class="buyBtn">Comprar</a>
-    </li>`
-    })
+        <div onclick="tryFav('${book1.title}')" id="favBtn"><3</div>
+        </li>`
+       })
     .join('')
     booksList.innerHTML = `<a href
     ="/" id="goBack">Volver</a><h1>${initialBookData.results.list_name}</h1>${htmlString}`;
@@ -145,11 +146,3 @@ const displayBooks = (books1)=>{
 
 loadLists();
 
-    
-   
-    
-
-// document.getElementById("listaName").addEventListener('click', event =>{
-//     let listaEvent = event.innerHTML;
-
-// })

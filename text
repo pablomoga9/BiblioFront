@@ -1,0 +1,4 @@
+Cuando se inicia la cada lista de libros se comprueba si hay sesión iniciada. Si sí la hay entramos en el documento de la bdd del current user
+y hacemos variable interna de el array de favs que contiene cada uno de los objetos de los distintos libros que haya guardados. Con bucle for cojo
+los libros de la lista con length de tantos como haya. A cada uno de ellos le pongo una llamada. Comprobar si el book1.title del libro es el mismo
+que el repaso de la base de datos de los documentos teniendo en cuenta el titulo de todos los libros que se encuentran en la lista de favs

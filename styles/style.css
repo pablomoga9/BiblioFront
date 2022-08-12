@@ -16,10 +16,10 @@ body{
 .imageOverlay{
     position: absolute;
     top:0;
-    
+    height: 315px;
     left:0px;
     width: 100%;
-    height: 100%;
+    
     background: rgba(0, 0, 0, 0.7);
     color: #ffffff;
     display: flex;
@@ -71,6 +71,13 @@ body{
 #navTab > li{
     margin: 20px;
 }
+
+#userName{
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+}
+
 #btnLogin, #btnSignup{
     padding: 8px;
     border-radius: 20px;
@@ -78,6 +85,17 @@ body{
     color: white;
     cursor: pointer;
     border: 3px solid rgb(35, 143, 157);
+    display: none;
+}
+
+#btnLogout{
+    padding: 8px;
+    border-radius:20px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: 3px solid rgb(35, 143, 157);
+   display: none;
 }
 
 #modal::backdrop{
@@ -85,7 +103,7 @@ body{
     
 
 }
-#modal{
+#modal,#modal2, #modal3{
     border-radius: 40px;
     padding: 30px;
     border: 5px solid rgb(192, 192, 192) ;
@@ -108,6 +126,18 @@ border-radius: 6px;
 ::-webkit-scrollbar-thumb:hover{
     background: linear-gradient(transparent,#006cff);
     
+}
+
+#navImage{
+    width: 40px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+#profileImage{
+    width: 200px;
+    height: 250px;
+    border-radius: 200px;
 }
 
 header{
