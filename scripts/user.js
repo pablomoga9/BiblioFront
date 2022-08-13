@@ -105,7 +105,7 @@ const signUpUser = (email, password) => {
         createUser({
           id:user.uid,
           email:user.email,
-          favs:[]
+          favs:""
           });
 
           swal({
@@ -218,10 +218,7 @@ const signUpUser = (email, password) => {
     thisRef
     .put(file)
     .then(function (snapshot) {
-      alert("File Uploaded")
-      console.log('Uploaded a blob or file!');
-      var usersRef = db.collection("users").doc(user.email);
-
+     var usersRef = db.collection("users").doc(user.email);
       var mergeImageDb = usersRef.set({
         imageName:file.name
       },{merge:true})
@@ -232,7 +229,7 @@ const signUpUser = (email, password) => {
    
   })
 }
-let url1;
+
 
 function getUrl(){
   firebase.auth().onAuthStateChanged(user => {
@@ -297,4 +294,4 @@ function getProfileImage(){
 }
 
 
-getUrl();
+getProfileImage();

@@ -133,8 +133,10 @@ const displayBooks = (books1)=>{
         <p class="imageDescription">${book1.description}</p>
         <p class="imageLong">Semanas en lista: ${book1.weeks_on_list}</p>
         </div>
+        <div id="buyFav">
         <a href="${book1.buy_links[0].url}" class="buyBtn">Comprar</a>
-        <div onclick="tryFav('${book1.title}')" id="favBtn"><3</div>
+        <div onclick="tryFav({title:'${book1.title}',image:'${book1.book_image}'})" id="favBtn"><3</div>
+        </div>
         </li>`
        })
     .join('')
