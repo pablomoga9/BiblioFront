@@ -3,6 +3,7 @@ let list = document.getElementById("categoryList");
 let navImage = document.getElementById("navImage");
 let userName = document.getElementById("userName");
 let btnLogout = document.getElementById("btnLogout");
+const modal4 = document.querySelector('#modal4');
 
 navImage.style.display = "block";
 userName.style.display = "block";
@@ -10,7 +11,8 @@ btnLogout.style.display = "block";
 async function displayFavList(){
    
     firebase.auth().onAuthStateChanged(user => {
-    var docRef = db.collection('users')
+    modal4.showModal()
+      db.collection('users')
     .where("email","==",user.email)
     .get()
     .then((querySnapshot)=>{
@@ -25,6 +27,7 @@ async function displayFavList(){
          })
          .join('')
          list.innerHTML = printFavs;
+         modal4.close()
           })
        })
     })
@@ -172,6 +175,8 @@ firebase.auth().onAuthStateChanged(user => {
      let btnLogin = document.getElementById("btnLogin");
      let btnSignup = document.getElementById("btnSignup");
      let btnLogout = document.getElementById("btnLogout");
+     let heartImage = document.getElementById("heartImage");
+     let navImage = document.getElementById("navImage");
      let nickName = user.email.split('@')[0];
      userName.style.display = "block";
      userName.innerHTML = nickName;
@@ -179,7 +184,8 @@ firebase.auth().onAuthStateChanged(user => {
      btnSignup.style.display = "none";
      btnLogout.style.display = "block";
      console.log(firebase.auth().currentUser);
-
+     heartImage.style.display = "block";
+     navImage.style.display = "block"
 
 
 
@@ -190,9 +196,13 @@ firebase.auth().onAuthStateChanged(user => {
      let btnLogin = document.getElementById("btnLogin");
      let btnSignup = document.getElementById("btnSignup");
      let btnLogout = document.getElementById("btnLogout");
+     let heartImage = document.getElementById("heartImage");
+     let navImage = document.getElementById("navImage");
      btnLogin.style.display = "block";
      btnSignup.style.display = "block";
      btnLogout.style.display = "none";
+     heartImage.style.display = "none";
+     navImage.style.display = "none"
    }
 
    

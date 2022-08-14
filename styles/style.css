@@ -80,6 +80,7 @@ body{
     top: 10px;
     list-style-type: none;
     right: 0px;
+    align-items:flex-start;
 }
 #navTab > li{
     margin: 20px;
@@ -115,6 +116,8 @@ body{
     cursor: pointer;
     border: 3px solid rgb(35, 143, 157);
    display: none;
+   position: relative;
+   right: -20px
 }
 
 #modal::backdrop{
@@ -157,6 +160,32 @@ border-radius: 6px;
     width: 200px;
     height: 250px;
     border-radius: 200px;
+}
+
+.spinner{
+    border: 9px solid rgb(99, 99, 99);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-left-color: rgb(71, 47, 252);
+    /* filter: blur(0px) brightness(200%); */
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+
+    animation:spin 1s ease infinite;
+}
+@keyframes spin{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+#modal4{
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    overflow: hidden;
+    border-radius: 80px;
 }
 
 header{

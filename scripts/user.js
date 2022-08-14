@@ -173,13 +173,16 @@ const signUpUser = (email, password) => {
       let btnSignup = document.getElementById("btnSignup");
       let btnLogout = document.getElementById("btnLogout");
       let nickName = user.email.split('@')[0];
+      let heartImage = document.getElementById("heartImage");
+      let navImage = document.getElementById("navImage");
       userName.style.display = "block";
       userName.innerHTML = nickName;
       btnLogin.style.display = "none";
       btnSignup.style.display = "none";
       btnLogout.style.display = "block";
       console.log(firebase.auth().currentUser);
-
+      heartImage.style.display = "block";
+      navImage.style.display = "block"
 
 
 
@@ -190,9 +193,13 @@ const signUpUser = (email, password) => {
       let btnLogin = document.getElementById("btnLogin");
       let btnSignup = document.getElementById("btnSignup");
       let btnLogout = document.getElementById("btnLogout");
+      let heartImage = document.getElementById("heartImage");
+      let navImage = document.getElementById("navImage");
       btnLogin.style.display = "block";
       btnSignup.style.display = "block";
       btnLogout.style.display = "none";
+      heartImage.style.display = "none";
+      navImage.style.display = "none"
     }
 
     
@@ -285,9 +292,12 @@ function getProfileImage(){
     querySnapshot.forEach((doc) => {
       let profileImage = document.getElementById("profileImage");
       let navImage = document.getElementById("navImage");
-      profileImage.src = doc.data().imageUrl
-      navImage.src = doc.data().imageUrl
-      console.log(doc.data().imageUrl)
+      if(doc.data().imageUrl != null){
+        profileImage.src = doc.data().imageUrl
+        navImage.src = doc.data().imageUrl
+        console.log(doc.data().imageUrl)
+      }
+      
     })
   })
   })

@@ -12,7 +12,7 @@
 <body>
     <nav class="menu">
         <ul id="navTab">
-            <li><img id="navImage" src="" alt=""></li>
+            <li><img id="navImage" src="./assets/images/blank-profile-picture-973460_1280.png" alt=""></li>
             <li><p onclick="showProfile()" id="userName"></p></li>
             <li><button id="btnLogin">Iniciar Sesión</button></li>
             <li><button id="btnSignup">Registro</button></li>
@@ -53,7 +53,7 @@
             <button type="submit">Enviar</button>
         </form>
     </dialog>
-    <dialog id="modal2">
+    <dialog method="dialog" id="modal2">
         <h2>Registro</h2>
         <form method="dialog"  id="form2">
             <button id="btnCloseSignUp">X</button>
@@ -67,8 +67,13 @@
         <button id="btnCloseProfile">X</button>
         <h2 id="profileTitle"></h2>
         <label>Cambia tu imagen de perfil: </label>
-        <img id="profileImage" src="">
+        <img id="profileImage" src="./assets/images/blank-profile-picture-973460_1280.png">
         <input type="file" onchange="uploadFile()" id="files" name="files[]" multiple />
+    </dialog>
+    <dialog id="modal4">
+        <div class="spinner">
+
+        </div>
     </dialog>
    </main>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

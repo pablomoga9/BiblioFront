@@ -13,6 +13,7 @@ let initialBookData;
 const openModalLogIn = document.querySelector('#btnLogin');
 const closeModalLogIn = document.querySelector('#btnCloseLogin');
 const modal = document.querySelector('#modal');
+const modal4 = document.querySelector('#modal4');
 
 openModalLogIn.addEventListener("click",()=>{
     modal.showModal();
@@ -77,7 +78,9 @@ updateSelect.addEventListener('click',(event)=>{
 
 const loadLists = async()=>{
     try{
+        modal4.showModal();
         const res = await fetch('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=RfMnGRAEn2a8ieRUrcEKuqoMckyRLqQf')
+        modal4.close();
         bookBool = false;
         searchBar.placeholder = "Busca una lista de libros";
         updateSelect.style.display = "block";
@@ -95,7 +98,9 @@ const loadLists = async()=>{
 };
 
 async function loadBooks (bookList){
-   const res = await fetch(`https://api.nytimes.com/svc/books/v3/lists/${bookList}.json?api-key=RfMnGRAEn2a8ieRUrcEKuqoMckyRLqQf`)
+    modal4.showModal();
+    const res = await fetch(`https://api.nytimes.com/svc/books/v3/lists/${bookList}.json?api-key=RfMnGRAEn2a8ieRUrcEKuqoMckyRLqQf`)
+    modal4.close();
     initialBookData = await res.json();
     bookBool = true;
     searchBar.placeholder = "Busca un libro"
