@@ -114,8 +114,8 @@ const displayLists = (list)=>{
   booksList.innerHTML = "";
     const htmlString = list.map((lists1)=>{
        return  `
-        <li class = "book">
-            <a onclick="loadBooks('${lists1.list_name}')">${lists1.list_name}</a>
+        <li class = "listItem">
+            <a id="listTitle" onclick="loadBooks('${lists1.list_name}')">${lists1.list_name}</a>
             <p>${lists1.oldest_published_date}</p><br>
             <p>${lists1.newest_published_date}</p><br>
             <p>${lists1.updated}</p>

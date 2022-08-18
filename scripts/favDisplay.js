@@ -208,5 +208,43 @@ firebase.auth().onAuthStateChanged(user => {
    
  })
 
+ const logoutUser = async () => {
+  try {
+      let user = await firebase.auth().currentUser;
+      
+      if(user!=null){
+         await swal({
+              title: "Logout",
+              icon: "warning",
+              text: "Abandonando sesión",
+              closeOnClickOutside: false,
+              timer: 2000,
+              buttons: false
+            });
+          await firebase.auth().signOut();
+          logged = false
+          console.log("Sale del sistema: "+user.email);
+          localStorage.clear();
+          window.location.pathname = "../index.html";
+
+          let btnLogin = document.getElementById("btnLogin");
+          let btnSignup = document.getElementById("btnSignup");
+          let btnLogout = document.getElementById("btnLogout");
+          btnLogin.style.display = "block";
+          btnSignup.style.display = "block";
+          btnLogout.style.display = "none";
+         
+      }
+      else{
+          location.reload();
+      }
+      
+      
+  } catch (error) {
+      console.log("hubo un error: "+error);
+  }
+}
+document.getElementById("btnLogout").addEventListener("click", logoutUser);
+
 
 getProfileImage();
