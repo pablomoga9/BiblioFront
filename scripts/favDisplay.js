@@ -21,18 +21,27 @@ async function displayFavList(){
          const printFavs = doc.data().favs.map((element)=>{
             return `<li class="books">
             <img class="bookImage" src="${element.image}">
-            <p>${element.title}</p>
+            <p id="bookTitle">${element.title}</p>
             <a id="clearOne" onclick="clearOne('${element.title}')">Eliminar de la lista</a>
             </li>`
          })
          .join('')
          list.innerHTML = printFavs;
+        
          modal4.close()
+        
+         list.style.display = "block"
           })
        })
     })
  }
 
+ let createBack = document.createElement("a");
+ createBack.setAttribute('href', '/');
+ createBack.setAttribute('id', 'goBack');
+ createBack.innerHTML = "Volver";
+ document.getElementById("topFavContainer").appendChild(createBack);
+ createBack.style.top = "0px"
  displayFavList()
 
 

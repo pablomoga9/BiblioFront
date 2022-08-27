@@ -107,6 +107,12 @@ async function loadBooks (bookList){
     updateSelect.style.display = "none";
     updateText.style.display = "none";
     bookData = initialBookData.results.books;
+    let createBack = document.createElement("a");
+    createBack.setAttribute('href', '/');
+    createBack.setAttribute('id', 'goBack');
+    createBack.innerHTML = "Volver";
+    document.body.appendChild(createBack);
+    booksList.style.display = "block";
     displayBooks(bookData);
 }
 // console.log("ok")
@@ -114,11 +120,11 @@ const displayLists = (list)=>{
   booksList.innerHTML = "";
     const htmlString = list.map((lists1)=>{
        return  `
-        <li class = "listItem">
+        <li id = "listItem">
             <a id="listTitle" onclick="loadBooks('${lists1.list_name}')">${lists1.list_name}</a>
-            <p>${lists1.oldest_published_date}</p><br>
-            <p>${lists1.newest_published_date}</p><br>
-            <p>${lists1.updated}</p>
+            <p class="listP">Fecha del libro más antiguo: ${lists1.oldest_published_date}</p><br>
+            <p class="listP">Fecha del último libro incorporado: ${lists1.newest_published_date}</p><br>
+            <p class="listP">Frecuencia de actualización: ${lists1.updated}</p>
         </li>
         `;
         
@@ -133,20 +139,22 @@ const displayBooks = (books1)=>{
         return `
         <li class = "book">
         <img class="bookImage" src="${book1.book_image}">
-        <h2>${book1.rank}#${book1.title}</h2>
+        <h2 id="bookTitle">${book1.rank}#${book1.title}</h2>
         <div class="imageOverlay">
         <p class="imageDescription">${book1.description}</p>
         <p class="imageLong">Semanas en lista: ${book1.weeks_on_list}</p>
         </div>
         <div id="buyFav">
         <a href="${book1.buy_links[0].url}" class="buyBtn">Comprar</a>
-        <div onclick="tryFav({title:'${book1.title}',image:'${book1.book_image}'})" id="favBtn"><3</div>
-        </div>
+        <div id="favContainer"> <div onclick="tryFav({title:'${book1.title}',image:'${book1.book_image}'})" id="favBtn"> ❤</div>
+        </div></div>
+       
         </li>`
        })
     .join('')
-    booksList.innerHTML = `<a href
-    ="/" id="goBack">Volver</a><h1>${initialBookData.results.list_name}</h1>${htmlString}`;
+    booksList.innerHTML = `<h1>${initialBookData.results.list_name}</h1>${htmlString}`;
+   
+    // booksList.style.gridTemplateColumns = "repeat(1, 1fr)";
 }
 
 

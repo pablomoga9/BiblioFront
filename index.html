@@ -12,7 +12,7 @@
 <body>
     <nav class="menu">
         <ul id="navTab">
-            <li>
+            <li id="logoContainer">
                 <img src="./assets/images/libLogo.png" id="logo" alt="logo">
                 <a href="/" id="logoText">Bibliotech</a>
             </li>
@@ -33,7 +33,7 @@
     <div class="container">
        
         <div id="searchWrapper">
-            <div class="search-box">
+            <div class="search-box" id="searchContainer">
                 <input type="text" name="searchBar" id="searchBar">
             </div>
             <div class="search-select">
@@ -53,7 +53,7 @@
             <button id="btnCloseLogin">X</button>
             <label>Email<input id="emailInput" type="text" name="email" placeholder="Introduce tu correo electrónico"></label><br>
             <label>Contraseña <input id="passInput" type="password" name="pass" placeholder="Introduce tu contraseña"></label>
-            <button type="submit">Enviar</button>
+            <button type="submit" id="sendSignIn">Enviar</button>
         </form>
     </dialog>
     <dialog method="dialog" id="modal2">
@@ -63,7 +63,7 @@
             <label>Email <input id="email2" name="email2" type="text" placeholder="Introduce un correo electrónico"></label><br>
             <label>Contraseña <input id="pass1" type="password" name="pass1" placeholder="Introduce una contraseña"></label>
             <label>Repite la contraseña <input id="pass2" type="password" name="pass2" placeholder="Vuelve a introducir la misma contraseña"></label>
-            <button type="submit">Enviar</button>
+            <button type="submit" id="sendSignUp">Enviar</button>
         </form>
     </dialog>
     <dialog method="dialog" id="modal3">
