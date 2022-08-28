@@ -46,3 +46,11 @@ Dentro de cada lista también tenemos la opción de filtrar los libros por nombr
 Para registrarnos accederemos al botón de la barra de navegación superior a la derecha. Ahí nos pedirá que aportemos un correo electrónico que deberá tener el formato correcto y escribir una contraseña válida (con los caracteres que nos especifica). Al registrarnos, la sesión se iniciará automáticamente. Una de las posibilidades al haber iniciado sesión es la de cambiar nuestra foto de perfil. Por defecto nos aparecerá una imagen predeterminada. Para cambiarla haremos click en el nombre de usuario de la barra de navegación y dentro del cuadro de diálogo que aparece, seleccionaremos un archivo de nuestro sistema para subirlo al Storage. Automáticamente tendremos esta imagen en nuestro perfil y en la barra de navegación junto al nombre.
 ![clickList](assets/images/registro1.gif)
 
+--------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------
+
+Una vez hayamos iniciado sesión, en la barra de navegación encontraremos el icono de Favoritos al que podremos acceder y ver los libros de la lista en caso de haber añadido alguno. Dentro de esta lista tenemos la posibilidad de "eliminar de la lista" individualmente los elementos o pulsar en el botón de "Limpiar lista" para eliminarlos todos.
+
+![clickList](assets/images/favs1.gif)
+
