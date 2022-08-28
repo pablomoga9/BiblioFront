@@ -1,5 +1,5 @@
 
-let list = document.getElementById("categoryList");
+let list = document.getElementById("favsList");
 let navImage = document.getElementById("navImage");
 let userName = document.getElementById("userName");
 let btnLogout = document.getElementById("btnLogout");
@@ -30,7 +30,9 @@ async function displayFavList(){
         
          modal4.close()
         
-         list.style.display = "block"
+        //  list.style.display = "block"
+        //---
+      
           })
        })
     })

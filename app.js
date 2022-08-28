@@ -1,5 +1,5 @@
 const booksList = document.getElementById('categoryList');
-
+const booksList2 = document.getElementById('booksList')
 const searchBar = document.getElementById('searchBar');
 const updateSelect = document.getElementById('selectUpdate');
 const updateText = document.getElementById('updateText');
@@ -113,6 +113,9 @@ async function loadBooks (bookList){
     createBack.innerHTML = "Volver";
     document.body.appendChild(createBack);
     booksList.style.display = "block";
+    searchBar.style.top = "-120px";
+    searchBar.style.display = "fixed";
+    document.getElementById("goBack").style.top = "200px"
     displayBooks(bookData);
 }
 // console.log("ok")
@@ -139,7 +142,7 @@ const displayBooks = (books1)=>{
         return `
         <li class = "book">
         <img class="bookImage" src="${book1.book_image}">
-        <h2 id="bookTitle">${book1.rank}#${book1.title}</h2>
+        <h2 id="bookTitle"><p id="rankNumber">${book1.rank}</p>${book1.title}</h2>
         <div class="imageOverlay">
         <p class="imageDescription">${book1.description}</p>
         <p class="imageLong">Semanas en lista: ${book1.weeks_on_list}</p>
@@ -152,9 +155,10 @@ const displayBooks = (books1)=>{
         </li>`
        })
     .join('')
-    booksList.innerHTML = `<h1>${initialBookData.results.list_name}</h1>${htmlString}`;
-   
-    // booksList.style.gridTemplateColumns = "repeat(1, 1fr)";
+    booksList.innerHTML = `<h1 id="bookListTitle">${initialBookData.results.list_name}</h1><div id="booksDiv">${htmlString}</div>`;
+    //    booksList.style.display = "flex";
+    //    booksList.style.flexWrap = "wrap";
+    //    booksList.style.justifyContent = "center"
 }
 
 

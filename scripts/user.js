@@ -82,9 +82,9 @@ const createUser = (user) => {
         const form1 = document.getElementById("form1");
         form1.reset();
         logged = true;
-        let passInput = document.getElementById("passInput").placeholder;
-        passInput = "La contraseña o el usuario es incorrecto";
-        // passInput.style.color = "red";
+        let passInput = document.getElementsByName("pass");
+        passInput.placeholder= "La contraseña o el usuario es incorrecto";
+        //passInput.style.color = "red";
         console.log(errorCode)
         console.log(errorMessage)
       });
@@ -99,23 +99,23 @@ const signUpUser = (email, password) => {
       .then((userCredential) => {
         console.log("in");
         let user = userCredential.user;
-        console.log(`se ha registrado ${user.email} ID:${user.uid}`)
-        alert(`se ha registrado ${user.email} ID:${user.uid}`)
-   
+       
+        document.getElementById("modal2").close();
+        swal({
+          title: "Registro",
+          icon: "success",
+          text: `Registro completado con éxito. Inicia sesión con ${email}`,
+          closeOnClickOutside: false,
+          timer: 2000,
+          buttons: false
+        });
         createUser({
           id:user.uid,
           email:user.email,
           favs:""
           });
 
-          swal({
-            title: "Registro",
-            icon: "success",
-            text: `Registro completado con éxito. Inicia sesión con ${email}`,
-            closeOnClickOutside: false,
-            timer: 2000,
-            buttons: false
-          });
+         
   
       })
       .catch((error) => {

@@ -43,7 +43,7 @@ async function tryFav(titleName){
             icon: "warning",
             text: "Debes iniciar sesión para poder añadir libros a tu lista de favoritos",
             closeOnClickOutside: true,
-            buttons: true
+            button: true
           })
       }
    })

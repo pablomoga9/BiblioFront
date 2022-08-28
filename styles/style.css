@@ -3,17 +3,43 @@ body{
    color: white;
    font-family: 'Hind Siliguri', sans-serif;
 }
-.book {
+.book     {
     position: relative;
     width: 200px;
+    margin: 50px;
+}
+
+#bookListTitle{
+    position: relative;
+    top: -120px;
 }
 
 #categoryList{
-    display: flex;
+   display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+   align-items: center;
 }
 
+#booksDiv{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: -200px;
+}
+#favsList{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   position: relative;
+   /* width: 100%; */
+}
+
+.books{
+    margin: 20px;
+    width: 20%;
+}
 
 
 #listTitle{
@@ -64,7 +90,7 @@ body{
 }
 .imageOverlay{
     position: absolute;
-    top:0;
+    top:30px;
     height: 315px;
     left:0px;
     width: 100%;
@@ -107,6 +133,7 @@ body{
     width: 20%;
     height: 20%;
     opacity: 70%;    
+    color: rgb(255, 21, 21);
 }
 
 #heartImage{
@@ -114,7 +141,7 @@ body{
     cursor: pointer;
     position: absolute;
     right: 150px;
-    margin: 0px 20px 0px 20px
+    margin: 0px 50px 0px 20px
 }
 
 #heartImage:hover{
@@ -128,11 +155,20 @@ body{
     justify-content: space-between;
     top: 10px;
     list-style-type: none;
-    right: 0px;
+    right: 20px;
     align-items:flex-start;
 }
 #navTab > li{
     margin: 20px;
+}
+
+#rankNumber{
+    margin: 0 !important;
+    width: 30%;
+    background: #20a5c3;
+    text-align: center;
+    border-radius: 30px;
+    height: 30%;
 }
 
 #logoContainer{
@@ -250,10 +286,7 @@ border-radius: 6px;
     border-radius: 80px;
 }
 
-header{
-    display: flex;
-    justify-content: center;
-}
+
 
 #selectUpdate{
     border-radius: 20px;
@@ -284,12 +317,16 @@ ul{
     text-decoration: none;
     font-weight: bold;
     font-size: 40px;
-    position: absolute;
-    top: 40px;
+    position: fixed;
+    top: 30px;
     color: rgb(255, 255, 255);
+    left: 40px;
+    background: rgba(0, 47, 67, 0.7);
+    padding: 20px;
+    border-radius: 15px;
 }
 
-#emailInput, #passInput{
+#emailInput,#email2,#pass1,#pass2, #passInput{
     width: 100%;
     height: 30px;
     border-radius: 3px;
@@ -466,7 +503,9 @@ ul{
  #buyFav{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    
+    margin-bottom: 30px;
+    position: relative;
+    top: 0px;
  }
  #favBtn{
    text-align: center;
@@ -555,6 +594,8 @@ ul{
     width: 20%;
  }
 
+ 
+
  #bookTitle{
     font-weight: bold;
     background-color:rgba(22, 22, 22, 0.5);
@@ -564,12 +605,19 @@ ul{
  }
 
  #favH{
-    margin: auto;
+    margin-left: 40px;
  }
 
 
  #navTab{
     position: fixed;
  }
+
+ #navTab{
+    z-index: 9;
+    background: rgba(0, 25, 39, 0.7);
+    border-radius: 30px;
+ }
+ 
 
 
