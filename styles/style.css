@@ -298,7 +298,7 @@ border-radius: 6px;
     border: 2px solid rgb(23, 84, 120);
     padding: 10px;
     cursor: pointer;
-    width: 100%;
+    /* width: 100%; */
     /* display: flex;
     align-items: center;
     justify-content: space-between; */
@@ -622,6 +622,21 @@ ul{
     background: rgba(0, 25, 39, 0.7);
     border-radius: 30px;
  }
+
+ @media (max-width: 600px) {
+    #logoContainer{
+        display: none;
+    }
+    #selectUpdate{
+        width: 50%;
+    }
+    #logoText{
+        display: none;
+    }
+    #searchBar{
+        width: 100%;
+    }
+  }
  
 
 
